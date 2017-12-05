@@ -5,13 +5,13 @@ class ScoresController < ActionController::Base
     random_forest = Scoruby.load_model 'app/pmmls/titanic_rf.pmml'
 
     @features =  {
-      Sex: 'male',
+      Sex: params['sex'],
       Parch: params['parch'].to_f,
       Age: params['age'].to_f,
       Fare: params['fare'].to_f,
       Pclass: params['pclass'].to_f,
       SibSp: params['sibsp'].to_f,
-      Embarked: 'Q'
+      Embarked: params['embarked']
     }
 
     @score = random_forest.predict(@features)
