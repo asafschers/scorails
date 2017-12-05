@@ -1,4 +1,6 @@
-<%= form_tag 'scores' do %>
+<%= csrf_meta_tag %>
+
+<%= form_tag 'score', method: 'post' do %>
     <%= label_tag(:sex, 'Sex') %>
     <%= text_field_tag(:sex) %>
     <%= label_tag(:parch, 'Parch') %>
@@ -7,16 +9,17 @@
     <%= text_field_tag(:age) %>
     <%= label_tag(:fare, 'Fare') %>
     <%= text_field_tag(:fare) %>
-    <%= label_tag(:fare, 'Pclass') %>
-    <%= text_field_tag(:sibsp) %>
+    <%= label_tag(:pclass, 'Pclass') %>
+    <%= text_field_tag(:pclass) %>
     <%= label_tag(:sibsp, 'SibSp') %>
-    <%= text_field_tag(:embarked) %>
+    <%= text_field_tag(:sibsp) %>
     <%= label_tag(:embarked, 'Embarked') %>
-    <%= text_field_tag(:classify) %>
+    <%= text_field_tag(:embarked) %>
     <%= submit_tag('Classify') %>
 <% end %>
 
+Params: <%= params %> <br>
+Score: <%= @score %>   <br>
 
-Score: <%= @score %>    <br>
-Features: <%= @features %>   <br>
-Params: <%= params %>
+
+
