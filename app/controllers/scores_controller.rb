@@ -1,5 +1,17 @@
 class ScoresController < ActionController::Base
-  
+
+  def index
+    @features =  {
+      Sex: 'male',
+      Parch: 1,
+      Age: 50,
+      Fare: 30,
+      Pclass: 2,
+      SibSp: 1,
+      Embarked: 'Q'
+    }
+  end
+
   def score
     @params = params
     random_forest = Scoruby.load_model 'app/pmmls/titanic_rf.pmml'
@@ -14,7 +26,11 @@ class ScoresController < ActionController::Base
       Embarked: params['embarked']
     }
 
-    @score = random_forest.predict(@features)
+    begin
+      @score = random_forest.predict(@features)
+    rescue => e
+      @score = e
+    end
 
     respond_to do |format|
       format.html { render 'scores/index' }

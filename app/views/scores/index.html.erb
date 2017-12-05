@@ -2,23 +2,22 @@
 
 <%= form_tag 'score', method: 'post' do %>
     <%= label_tag(:sex, 'Sex') %>
-    <%= text_field_tag(:sex, 'male') %>
+    <%= text_field_tag(:sex, @features[:Sex]) %>         <br>
     <%= label_tag(:parch, 'Parch') %>
-    <%= text_field_tag(:parch, 1) %>
+    <%= text_field_tag(:parch, @features[:Parch]) %>            <br>
     <%= label_tag(:age, 'Age') %>
-    <%= text_field_tag(:age, 2) %>
+    <%= text_field_tag(:age, @features[:Age]) %>              <br>
     <%= label_tag(:fare, 'Fare') %>
-    <%= text_field_tag(:fare, 3) %>
+    <%= text_field_tag(:fare, @features[:Fare]) %>             <br>
     <%= label_tag(:pclass, 'Pclass') %>
-    <%= text_field_tag(:pclass, 4) %>
+    <%= text_field_tag(:pclass, @features[:Pclass]) %>           <br>
     <%= label_tag(:sibsp, 'SibSp') %>
-    <%= text_field_tag(:sibsp, 5) %>
+    <%= text_field_tag(:sibsp, @features[:SibSp]) %>            <br>
     <%= label_tag(:embarked, 'Embarked') %>
-    <%= text_field_tag(:embarked, 'Q') %>
+    <%= text_field_tag(:embarked, @features[:Embarked]) %>       <br>
     <%= submit_tag('Classify') %>
 <% end %>
 
-Params: <%= params %> <br>
 Score: <%= @score %>   <br>
 
 
