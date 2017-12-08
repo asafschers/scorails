@@ -1,5 +1,16 @@
 <%= csrf_meta_tag %>
 
+<b>Scorails</b> <br>
+Web User Interface that loads Random Forest PMML file   <br>
+Provides a web UI to send features and receive scores. <br>
+The technology stack for this project is built entirely on Ruby with Rails and <a href="https://github.com/asafschers/scoruby">Scoruby</a><br>
+<br>
+<b>Usage</b>        <br>
+Fork <a href="https://github.com/asafschers/scorails">this repo</a> and specify PMML files for your own models.        <br>
+For now you need to adjust the form for your models.    <br>
+Next version form will adjust itself to loaded models     <br>
+<br>
+<b>Score</b> <br>
 <%= form_tag 'score', method: 'post' do %>
     <%= label_tag(:sex, 'Sex') %>
     <%= select_tag(:sex, options_for_select(['male','female'], @features[:Sex])) %> <br>
