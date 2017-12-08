@@ -11,7 +11,7 @@ Send features to the loaded model and score
 ## About  
 Web User Interface that loads Random Forest PMML file   <br>
 Provides a web UI to send features and receive scores. <br>
-The technology stack for this project is built entirely on Ruby with Rails and Scoruby<br>
+The technology stack for this project is built entirely on Ruby with Rails and <a href="https://github.com/asafschers/scoruby">Scoruby</a><br>
 ## Usage
 Fork this repo and specify PMML files for your own models.         
 For now you need to adjust the form for your models.          
