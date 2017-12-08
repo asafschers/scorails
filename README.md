@@ -1,7 +1,7 @@
 # Scorails
 
-## <a href="https://medium.com/@aschers/deploy-machine-learning-models-from-r-research-to-ruby-go-production-with-pmml-b41e79445d3d">PMML introduction</a>
-This blog post demonstrates how to - 
+
+This<a href="https://medium.com/@aschers/deploy-machine-learning-models-from-r-research-to-ruby-go-production-with-pmml-b41e79445d3d">blog post</a>demonstrates how to - 
 
 Download a data set                                    <br>
 Train a Random Forest model in R  <br>
