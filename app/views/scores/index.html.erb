@@ -2,7 +2,7 @@
 
 <%= form_tag 'score', method: 'post' do %>
     <%= label_tag(:sex, 'Sex') %>
-    <%= text_field_tag(:sex, @features[:Sex]) %>         <br>
+    <%= select_tag(:sex, options_for_select(['male','female'], @features[:Sex])) %> <br>
     <%= label_tag(:parch, 'Parch') %>
     <%= text_field_tag(:parch, @features[:Parch]) %>            <br>
     <%= label_tag(:age, 'Age') %>
@@ -14,7 +14,7 @@
     <%= label_tag(:sibsp, 'SibSp') %>
     <%= text_field_tag(:sibsp, @features[:SibSp]) %>            <br>
     <%= label_tag(:embarked, 'Embarked') %>
-    <%= text_field_tag(:embarked, @features[:Embarked]) %>       <br>
+    <%= select_tag(:embarked, options_for_select(['Q','C','S'], @features[:Embarked])) %> <br>
     <%= submit_tag('Classify') %>
 <% end %>
 
