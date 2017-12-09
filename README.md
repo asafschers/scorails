@@ -1,3 +1,5 @@
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 # Scorails
 
 <a href="https://pacific-reef-10143.herokuapp.com">Example Website</a> <br><br>
@@ -17,9 +19,9 @@ Web User Interface that loads Random Forest PMML file   <br>
 Provides a web UI to send features and receive scores. <br>
 The technology stack for this project is built entirely on Ruby with Rails and <a href="https://github.com/asafschers/scoruby">Scoruby</a><br>
 ## Usage
-Fork this repo and specify PMML files for your own models.         
+Fork this repo and add PMML files for your own models.         
 For now you need to adjust the form for your models.          
-Next version form will adjust itself to loaded models
+Next version form will adjust itself to loaded models.
 
 ## Next Steps                                                        
 Web User Interface design                                                     <br>
