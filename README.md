@@ -1,7 +1,10 @@
 # Scorails
 
-<a href="https://pacific-reef-10143.herokuapp.com">Scorails Example Website</a> <br>
-<a href="https://medium.com/@aschers/deploy-machine-learning-models-from-r-research-to-ruby-go-production-with-pmml-b41e79445d3d">This blog post</a> demonstrates how to - 
+<a href="https://pacific-reef-10143.herokuapp.com">Example Website</a> <br><br>
+ 
+## Train Model and export to PMML 
+
+<a href="https://medium.com/@aschers/deploy-machine-learning-models-from-r-research-to-ruby-go-production-with-pmml-b41e79445d3d">This blog post</a> demonstrates how to -
 
 Download a data set                                    <br>
 Train a Random Forest model in R  <br>
