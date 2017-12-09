@@ -1,5 +1,5 @@
 {
-  "name": "Scorails - Web User Interface for Scoruby",
+  "name": "Scorails - UI for PMML scoring",
   "description": "User Interface for scoring with PMML files in Ruby",
   "repository": "https://github.com/asafschers/scorails",
   "keywords": ["rails", "pmml", "machine learning"]
