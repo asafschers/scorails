@@ -17,9 +17,9 @@ Next version form will adjust itself to loaded models     <br>
     <%= label_tag(:embarked, 'Embarked') %>
     <%= select_tag(:embarked, options_for_select(['Q','C','S'], @features[:Embarked])) %> <br>
 
-    <% @continuous_features.each do |feature| %>
+    <% @continuous_features.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
-        <%= text_field_tag(feature, @features[feature]) %>            <br>
+        <%= text_field_tag(feature, value) %>            <br>
     <% end %>
 
     <%= submit_tag('Classify') %>
