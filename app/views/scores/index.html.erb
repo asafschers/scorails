@@ -12,11 +12,12 @@ Next version form will adjust itself to loaded models     <br>
 <br>
 <b>Score</b> <br>
 <%= form_tag 'score', method: 'post' do %>
-    <%= label_tag(:sex, 'Sex') %>
-    <%= select_tag(:sex, options_for_select(['male','female'], @features[:Sex])) %> <br>
-    <%= label_tag(:embarked, 'Embarked') %>
-    <%= select_tag(:embarked, options_for_select(['Q','C','S'], @features[:Embarked])) %> <br>
 
+    <% @categorical_options.each do |feature, value| %>
+        <%= label_tag(feature, feature) %>
+        <%= select_tag(feature, options_for_select(value, @categorical_values[feature])) %> <br>
+    <% end %>
+    
     <% @continuous_features.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
         <%= text_field_tag(feature, value) %>            <br>
