@@ -13,12 +13,12 @@ Next version form will adjust itself to loaded models     <br>
 <b>Score</b> <br>
 <%= form_tag 'score', method: 'post' do %>
 
-    <% @categorical_options.each do |feature, value| %>
+    <% @random_forest_view_data.categories.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
-        <%= select_tag(feature, options_for_select(value, @categorical_values[feature])) %> <br>
+        <%= select_tag(feature, options_for_select(value, @random_forest_view_data.categorical_values[feature])) %> <br>
     <% end %>
     
-    <% @continuous_features.each do |feature, value| %>
+    <% @random_forest_view_data.continuous_features.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
         <%= text_field_tag(feature, value) %>            <br>
     <% end %>
@@ -26,7 +26,7 @@ Next version form will adjust itself to loaded models     <br>
     <%= submit_tag('Classify') %>
 <% end %>
 
-Score: <%= @score %>   <br>
+Score: <%= @random_forest_view_data.score %>   <br>
 
 
 
