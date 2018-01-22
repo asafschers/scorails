@@ -152,7 +152,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    scoruby (0.2.10)
+    scoruby (0.2.12)
       nokogiri (~> 1.7)
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
