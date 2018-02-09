@@ -1,12 +1,12 @@
 class ScoresController < ApplicationController
   def index
-    random_forest = MainModel.set_model 'app/pmmls/titanic_rf.pmml'
-    @random_forest_view_data = RandomForestViewData.new(random_forest, nil)
+    model = MainModel.set_model 'app/pmmls/titanic_rf.pmml'
+    @model_view_data = ModelViewData.new(model, nil)
   end
 
   def score
-    random_forest = MainModel.get_model
-    @random_forest_view_data = RandomForestViewData.new(random_forest, params)
+    model = MainModel.get_model
+    @model_view_data = ModelViewData.new(model, params)
 
     respond_to do |format|
       format.html { render 'scores/index' }

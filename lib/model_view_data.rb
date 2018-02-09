@@ -1,17 +1,17 @@
-class RandomForestViewData
-  def initialize(random_forest, params)
-    @random_forest = random_forest
+class ModelViewData
+  def initialize(model, params)
+    @model = model
     @params = params
   end
 
   def score
-    @random_forest.predict(features)
+    @model.score(features)
   rescue => e
     e
   end
 
   def categories
-    @random_forest.categorical_features
+    @model.categorical_features
   end
 
   def categorical_values
@@ -29,7 +29,7 @@ class RandomForestViewData
   end
 
   def input_categorical_features
-    @random_forest.categorical_features.keys.each_with_object({}) do |feature, hash|
+    @model.categorical_features.keys.each_with_object({}) do |feature, hash|
       hash[feature] = @params[feature]
     end
   end
@@ -39,12 +39,12 @@ class RandomForestViewData
   end
 
   def input_continuous_features
-    @random_forest.continuous_features.each_with_object({}) do |feature, hash|
+    @model.continuous_features.each_with_object({}) do |feature, hash|
       hash[feature] = @params[feature].to_f
     end
   end
 
   def default_continuous_features
-    (Hash[@random_forest.continuous_features.product([3])])
+    (Hash[@model.continuous_features.product([3])])
   end
 end

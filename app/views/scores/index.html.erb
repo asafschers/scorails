@@ -12,12 +12,12 @@ The scoring form will be rendered with your model's input fields. <br>
 <b>Score</b> <br>
 <%= form_tag 'score', method: 'post' do %>
 
-    <% @random_forest_view_data.categories.each do |feature, value| %>
+    <% @model_view_data.categories.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
-        <%= select_tag(feature, options_for_select(value, @random_forest_view_data.categorical_values[feature])) %> <br>
+        <%= select_tag(feature, options_for_select(value, @model_view_data.categorical_values[feature])) %> <br>
     <% end %>
     
-    <% @random_forest_view_data.continuous_features.each do |feature, value| %>
+    <% @model_view_data.continuous_features.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
         <%= text_field_tag(feature, value) %>            <br>
     <% end %>
@@ -25,7 +25,7 @@ The scoring form will be rendered with your model's input fields. <br>
     <%= submit_tag('Classify') %>
 <% end %>
 
-Score: <%= @random_forest_view_data.score %>   <br>
+Score: <%= @model_view_data.score %>   <br>
 
 
 
