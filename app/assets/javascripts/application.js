@@ -16,3 +16,12 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree 
+
+function loadFromJson() {
+  var json = $("#jsonInput").val()
+  var object = JSON.parse(json);
+  
+  for (var property in object) {
+    $('#' + property).val(object[property]);
+  }
+}
