@@ -40,7 +40,7 @@ class ModelViewData
 
   def input_continuous_features
     @model.continuous_features.each_with_object({}) do |feature, hash|
-      hash[feature] = @params[feature].to_f
+      hash[feature] = @params[feature].present? ? @params[feature].to_f : nil
     end
   end
 
