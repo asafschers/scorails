@@ -22,6 +22,15 @@ function loadFromJson() {
   var object = JSON.parse(json);
   
   for (var property in object) {
+    if (typeof(object[property]) != 'number') {
+       if (object[property] == false)
+        {
+          object[property] = 'false'
+        } else if (object[property] == true) {
+          object[property] = 'true'
+        }
+      }
+
     $('#' + property).val(object[property]);
   }
 }
