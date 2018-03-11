@@ -16,7 +16,11 @@ The scoring form will be rendered with your model's input fields. <br>
   <br>
   <br>
 <b>Score</b> <br>
+
+Score: <%= @model_view_data.score %>   <br>
+
 <%= form_tag 'score', method: 'post' do %>
+    <%= submit_tag('Classify') %>       <br>
 
     <% @model_view_data.categories.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
@@ -28,10 +32,8 @@ The scoring form will be rendered with your model's input fields. <br>
         <%= text_field_tag(feature, value) %>            <br>
     <% end %>
 
-    <%= submit_tag('Classify') %>
-<% end %>
 
-Score: <%= @model_view_data.score %>   <br>
+<% end %>
 
 
 
