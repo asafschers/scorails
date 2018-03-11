@@ -10,17 +10,19 @@ Fork <a href="https://github.com/asafschers/scorails">this repo</a>, add your mo
 The scoring form will be rendered with your model's input fields. <br>
 <br>
 <b>JSON Input</b> <br>
-<p><textarea id="jsonInput" type="text" >{"Fare": 5, "Sex": "male","Embarked": "Q", "Pclass": 6, "Parch": 7,"Age": 8, "SibSp": 9}  </textarea>
-  <br>               <br>
-  <button onclick="loadFromJson()" >Load From JSON</button>
+<p><textarea id="jsonInput" type="text" >{"Fare": 5, "Sex": "male","Embarked": "Q", "Pclass": 6, "Parch": 7,"Age": 8, "SibSp": 9}
+</textarea>
+  <br>
+  <button onclick="loadFromJson()" >Load From JSON</button>  
   <br>
   <br>
-<b>Score</b> <br>
-
-Score: <%= @model_view_data.score %>   <br>
-
+<b>Score</b>
 <%= form_tag 'score', method: 'post' do %>
-    <%= submit_tag('Classify') %>       <br>
+    <%= submit_tag('Score') %>       <br>
+
+    <b> <%= @model_view_data.score %></b>   <br><br>
+
+    <b> Features </b><br>
 
     <% @model_view_data.categories.each do |feature, value| %>
         <%= label_tag(feature, feature) %>
