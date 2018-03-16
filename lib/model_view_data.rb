@@ -1,4 +1,6 @@
 class ModelViewData
+  delegate :view_data, :score_data, to: :@categorical_features, prefix: :categorical
+
   def initialize(model, params)
     @model = model
     @params = params
@@ -10,14 +12,6 @@ class ModelViewData
     @model.score(features)
   rescue => e
     e
-  end
-
-  def categorical_view_data
-    @categorical_features.view_data
-  end
-
-  def categorical_score_data
-    @categorical_features.score_data
   end
 
   def continuous_features
