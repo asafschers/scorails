@@ -2,6 +2,8 @@ class ModelViewData
   def initialize(model, params)
     @model = model
     @params = params
+    @categorical_features = CategoricalFeatures.new(model.categorical_features,
+                                                    params)
   end
 
   def score
@@ -10,12 +12,12 @@ class ModelViewData
     e
   end
 
-  def categories
-    @model.categorical_features
+  def categorical_view_data
+    @categorical_features.view_data
   end
 
-  def categorical_values
-    @params.nil? ? default_categorical_features : input_categorical_features
+  def categorical_score_data
+    @categorical_features.score_data
   end
 
   def continuous_features
@@ -25,22 +27,12 @@ class ModelViewData
   private
 
   def features
-    continuous_features.merge(categorical_values)
-  end
-
-  def input_categorical_features
-    @model.categorical_features.keys.each_with_object({}) do |feature, hash|
-      hash[feature] = @params[feature]
-    end
-  end
-
-  def default_categorical_features
-    categories.transform_values(&:first)
+    continuous_features.merge(categorical_score_data)
   end
 
   def input_continuous_features
     @model.continuous_features.each_with_object({}) do |feature, hash|
-      hash[feature] = @params[feature].present? ? @params[feature].to_f : nil
+      hash[feature] = @params && @params[feature].present? ? @params[feature].to_f : nil
     end
   end
 
