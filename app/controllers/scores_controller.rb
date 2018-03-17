@@ -1,7 +1,7 @@
 class ScoresController < ApplicationController
   def index
     model = MainModel.set_model 'app/pmmls/titanic_rf.pmml'
-    @model_view_data = ModelViewData.new(model, nil)
+    @model_view_data = ModelViewData.new(model, {})
   end
 
   def score
